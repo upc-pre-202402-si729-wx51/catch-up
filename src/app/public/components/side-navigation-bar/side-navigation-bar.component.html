@@ -1,0 +1,23 @@
+<mat-sidenav-container>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport>
+    <mat-toolbar>
+      Sources
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item>Home 1</a>
+      <a mat-list-item>Home 2</a>
+      <a mat-list-item>Home 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button
+              (click)="drawer.toggle()"
+              type="button"
+              aria-label="Sidenav toggle icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
