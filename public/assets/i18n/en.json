@@ -1,0 +1,7 @@
+{
+  "read-more": "Read more",
+  "footer": {
+    "intro": "Made with",
+    "author": "by {{ authorName }} Development Team"
+  }
+}
