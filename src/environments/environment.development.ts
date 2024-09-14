@@ -1,5 +1,5 @@
 export const environment =
   {
     production: false,
-    key: "KEYOFDEVELOPMENT"
+    key: "cb8453a97bc8484291438f15d21dbc06"
   }
