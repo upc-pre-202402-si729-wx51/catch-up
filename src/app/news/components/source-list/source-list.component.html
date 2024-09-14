@@ -1,0 +1,5 @@
+<mat-nav-list>
+  @for (source of sources; track source){
+    <app-source-item [source]="source" (sourceSelected)="onSourceSelected($event)" ></app-source-item>
+  }
+</mat-nav-list>

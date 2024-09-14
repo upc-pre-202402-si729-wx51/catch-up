@@ -1,0 +1,10 @@
+<mat-list-item (click)="onClick()">
+  <img [alt]="source.name"
+       [src]="source.urlToLogo"
+       height="60"
+       matListItemAvatar
+       width="60">
+  <p matListItemLine>
+    <span>{{ source.name }}</span>
+  </p>
+</mat-list-item>
