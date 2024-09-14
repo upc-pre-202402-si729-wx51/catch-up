@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Source} from "../../news/model/source.entity";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class LogoApiService {
 
   constructor() { }
 
-  geUrlToLogo(source: any): string {
+  geUrlToLogo(source: Source): string {
     return `${this.baseUrl}${new URL(source.url).hostname}`
   }
 }
