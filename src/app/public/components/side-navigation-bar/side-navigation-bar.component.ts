@@ -11,6 +11,7 @@ import {Source} from "../../../news/model/source.entity";
 import {NewsApiService} from "../../../news/services/news-api.service";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {Article} from "../../../news/model/article.entity";
+import {ArticleListComponent} from "../../../news/components/article-list/article-list.component";
 
 @Component({
   selector: 'app-side-navigation-bar',
@@ -26,7 +27,8 @@ import {Article} from "../../../news/model/article.entity";
     MatIconButton,
     LanguageSwitcherComponent,
     FooterContentComponent,
-    SourceListComponent
+    SourceListComponent,
+    ArticleListComponent
   ],
   templateUrl: './side-navigation-bar.component.html',
   styleUrl: './side-navigation-bar.component.css'
@@ -40,6 +42,7 @@ export class SideNavigationBarComponent implements OnInit{
 
   onSourceSelected(source: Source) {
     console.log(source);
+    this.searchArticlesForSource(source);
   }
 
   ngOnInit(): void {
@@ -50,13 +53,21 @@ export class SideNavigationBarComponent implements OnInit{
         source.urlToLogo = this.logoApi.geUrlToLogo(source);
       });
 
+      this.searchArticlesForSource(this.sources[0]);
       console.log(this.sources);
     });
   }
 
   searchArticlesForSource(source: Source) {
-    //get articles for source
-    //this.newsApi.getArticlesBySourceId()
-    //console.log(this.articles);
+    this.newsApi.getArticlesBySourceId(source.id).subscribe((data: any) => {
+      this.articles = data['articles'];
+
+      this.articles.forEach((article: Article) => {
+        article.source.url = source.url;
+        article.source.urlToLogo = source.urlToLogo;
+      });
+
+      console.log(this.articles);
+    });
   }
 }

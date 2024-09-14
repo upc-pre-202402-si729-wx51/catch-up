@@ -1,1 +1,14 @@
-<p>article-item works!</p>
+<mat-card class="article-card">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{ article.title }}</mat-card-title>
+    </mat-card-title-group>
+  </mat-card-header>
+  <img [src]="article.urlToImage" alt="Article" mat-card-image/>
+  <mat-card-content>
+    <p>{{ article.description }}</p>
+  </mat-card-content>
+  <mat-card-actions class="actions-section">
+    <a [href]="article.url" color="primary" mat-button target="_blank">{{ 'read-more'|translate }}</a>
+  </mat-card-actions>
+</mat-card>

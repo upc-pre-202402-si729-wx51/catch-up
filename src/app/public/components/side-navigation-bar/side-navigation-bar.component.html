@@ -3,7 +3,7 @@
     <mat-toolbar>
       Sources
     </mat-toolbar>
-    <app-source-list [sources]="sources" (sourceSelected)="onSourceSelected($event)"></app-source-list>
+    <app-source-list [sources]="sources" (sourceSelected)="onSourceSelected($event)" />
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -17,10 +17,10 @@
       <span>CatchUp</span>
       <span class="spacer"></span>
       <span>
-      <app-language-switcher></app-language-switcher>
+      <app-language-switcher />
         </span>
     </mat-toolbar>
-
-    <app-footer-content></app-footer-content>
+    <app-article-list [articles]="articles" />
+    <app-footer-content />
   </mat-sidenav-content>
 </mat-sidenav-container>
